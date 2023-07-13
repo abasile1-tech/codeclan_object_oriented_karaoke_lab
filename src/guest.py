@@ -30,4 +30,6 @@ class Guest:
 			room.guests.append(self)
 			self.wallet -= 1000
 			room.till += 1000
+			return True
+		return False
 
