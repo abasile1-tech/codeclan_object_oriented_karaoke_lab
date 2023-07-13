@@ -1,0 +1,2 @@
+class TestRoom:
+	pass
