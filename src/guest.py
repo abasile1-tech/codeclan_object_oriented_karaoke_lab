@@ -15,3 +15,6 @@ class Guest:
 			self.wallet -= room.entry_fee
 			room.guests.append(self)
 			room.till += room.entry_fee
+			return True
+		else:
+			return False

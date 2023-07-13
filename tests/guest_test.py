@@ -16,9 +16,11 @@ class TestGuest(unittest.TestCase):
 	
 	def test_check_playlist(self):
 		self.assertEqual("WooHoo!", self.jerry.check_playlist(self.thunder_room))
+		self.assertEqual("Boo!", self.steve.check_playlist(self.thunder_room))
 
 	def test_pay_entry_fee(self):
-		self.rob.pay_entry_fee(self.thunder_room)
+		self.assertEqual(True, self.rob.pay_entry_fee(self.thunder_room))
 		self.assertEqual(40, self.rob.wallet)
 		self.assertEqual([self.jerry, self.rob], self.thunder_room.guests)
 		self.assertEqual(510, self.thunder_room.till)
+		self.assertEqual(False, self.steve.pay_entry_fee(self.thunder_room))
