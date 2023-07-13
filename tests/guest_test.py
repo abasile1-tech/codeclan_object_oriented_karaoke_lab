@@ -21,3 +21,4 @@ class TestGuest(unittest.TestCase):
 		self.rob.pay_entry_fee(self.thunder_room)
 		self.assertEqual(40, self.rob.wallet)
 		self.assertEqual([self.jerry, self.rob], self.thunder_room.guests)
+		self.assertEqual(510, self.thunder_room.till)

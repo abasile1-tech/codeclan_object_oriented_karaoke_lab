@@ -14,3 +14,4 @@ class Guest:
 		if len(room.guests) < room.guest_capacity and self.wallet >= room.entry_fee:
 			self.wallet -= room.entry_fee
 			room.guests.append(self)
+			room.till += room.entry_fee
