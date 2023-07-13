@@ -18,3 +18,16 @@ class Guest:
 			return True
 		else:
 			return False
+
+	def bribe_the_room(self, room):
+		if self.wallet > 1000:
+			for guest in room.guests:
+				guest.wallet += room.entry_fee
+				guest.wallet += 5
+				room.till -= room.entry_fee
+				room.till -= 5
+			room.guests.clear()
+			room.guests.append(self)
+			self.wallet -= 1000
+			room.till += 1000
+
