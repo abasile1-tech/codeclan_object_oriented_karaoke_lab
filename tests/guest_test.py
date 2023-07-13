@@ -24,3 +24,12 @@ class TestGuest(unittest.TestCase):
 		self.assertEqual([self.jerry, self.rob], self.thunder_room.guests)
 		self.assertEqual(510, self.thunder_room.till)
 		self.assertEqual(False, self.steve.pay_entry_fee(self.thunder_room))
+
+	def test_bribe_the_room(self):
+		self.rob.pay_entry_fee(self.thunder_room)
+		self.assertEqual(False, self.steve.pay_entry_fee(self.thunder_room))
+		self.assertEqual([self.steve],self.thunder_room.guests)
+		self.assertEqual(55, self.rob.wallet)
+		self.assertEqual(1000,self.steve.wallet)
+		self.assertEqual(115, self.jerry.wallet)
+		self.assertEqual(1500, self.thunder_room.till)
